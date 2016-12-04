@@ -43,6 +43,14 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class deployments {
-
+	
+	file { 'wildfly':
+		path => '/opt/wildfly/standalone/deployments'
+        ensure => directory,
+        mode => '0755',
+        owner => 'wildfly',
+        group => 'wildfly',
+		source => 'file:/artifacts/tomcatApp.war',
+    }
 
 }
